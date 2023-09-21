@@ -1,0 +1,120 @@
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    min-height: 100%; /* 莅丞舟蕁級�∽��絨駜�綺�減��� */
+}
+
+body {
+    color: #fff; /* 莅丞舟絖�篏�蘂��� */
+    font-size: 16px; /* 莅丞舟絖�篏�紊у� */
+
+    /*������俄減緇���羝���*/
+    background: radial-gradient(#034f8e, #034987, #02366d, #002353);
+    background: -webkit-radial-gradient( #034f8e, #034987, #02366d, #002353);
+    background: -moz-radial-gradient( #034f8e, #034987, #02366d, #002353);
+}
+
+li{ list-style-type:none;}
+
+
+/* 莅丞舟head�桁� */
+.head {
+    position: relative;
+    height: 90px;
+    margin: 0 15px;
+    padding-right: 60px;
+}
+
+.head h1 {
+    font-size: 30px;
+    letter-spacing: -2px;
+    text-align: center;
+    line-height: 90px;
+    padding-right: 55px;
+    color: #daf9ff;
+}
+
+.clearfix {
+    clear: both
+}
+
+/* 莅丞舟�狗���桁� */
+.time {
+    position: absolute;
+    right: 0;
+    line-height: 90px;
+    top: 0;
+}
+
+/* 莅丞舟mainbox�桁� */
+.mainbox {
+    padding: 0 10px;
+}
+
+.nav1 {
+    margin-left: -6px;
+    margin-right: -6px;
+}
+
+.nav1>li {
+    padding: 0 6px;
+    float: left;
+}
+
+.box {
+    border: 1px solid rgba(7, 118, 181, .5);
+    box-shadow: inset 0 0 10px rgba(7, 118, 181, .4);
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.tit{
+    padding: 10px 10px 10px 25px;
+    border-bottom:1px solid rgba(7,118,181,.7);
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+}
+.tit:before{
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: rgba(22,214,255,.9);
+    box-shadow: 0 0 5px rgba(22,214,255,.9);
+    border-radius: 10px;
+    left: 10px;
+    top: 18px;
+}
+
+.tit:after,
+.box:before{
+    width: 100%;
+    height: 1px;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    background:linear-gradient(to right,#076ead,#4ba6e0,#076ead);
+    box-shadow: 0 0 5px rgba(131,189,227,1);
+    opacity: .6
+}
+.box:before{
+    top: 0px;
+}
+
+.boxnav{
+    padding: 10px;
+    height: 390px;
+}
+x1.00

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script type="text/javascript" src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    $.get('https://geo.datav.aliyun.com/areas_v3/bound/341100_full.json', function (cZjson) {
+        echarts.registerMap('滁州', cZjson);
+        var chart = echarts.init(document.getElementById('main'));
+
+        option = {
+            title: {
+                text: '四色预警',
+                x:'center'
+            },
+            dataRange:{
+                min:0,
+                max:500,
+                text:['高','低'],
+                realtime:true,
+                calculable:true,
+                color:['orangered','yellow','green']
+            },
+            series:[
+                {
+                    name:'犯罪数量',
+                    type:'map',
+                    map:'滁州',
+                    mapLocation:{
+                        y:60
+                    },
+                    itemSytle:{
+                        emphasis:{label:{show:false}}
+                    },
+                    data:[
+                        {name:'琅琊区',value:700},
+                        {name:'南谯区',value:600},
+                        {name:'定远县',value:500},
+                        {name:'凤阳县',value:400},
+                        {name:'明光市',value:300},
+                        {name:'来安县',value:200},
+                        {name:'天长市',value:100}
+                    ]
+                }
+            ],
+
+        };
+        chart.setOption(option);
+    });
+</script>
+</body>
+</html>

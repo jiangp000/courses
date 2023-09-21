@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo with Vue</title>
+    <!-- 引入 Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F7F9FC;
+            padding: 20px;
+        }
+
+        li {
+            color: #333;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #E4E7ED;
+        }
+
+        .completed {
+            color: #A5ACB3;
+            text-decoration: line-through;
+        }
+
+        input[type="text"], button {
+            padding: 10px;
+            border: 1px solid #D4D9E1;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #4C8EF7;
+            color: #FFF;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #357ABD;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div>
+        <input type="text" v-model="newTask" placeholder="请输入你的任务名称">
+        <button @click="addTask">添加</button>
+    </div>
+
+    <div>
+        <ul>
+            <li v-for="task in tasks" @click="toggleCompletion(task)" :class="{ completed: task.completed }">
+                <span>{{ task.name }}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            newTask: '',
+            tasks: []
+        },
+        methods: {
+            addTask() {
+                if (this.newTask.trim()) {
+                    this.tasks.push({ name: this.newTask.trim(), completed: false });
+                    this.newTask = '';
+                }
+            },
+            toggleCompletion(task) {
+                task.completed = !task.completed;
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
