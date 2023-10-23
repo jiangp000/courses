@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://47.100.69.71:3306/www_abc_com
+    username: www_abc_com
+    password: hfdM22Ba1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+# MyBatis 配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
